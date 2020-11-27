@@ -334,7 +334,7 @@ https://registry.npmjs.org/express
 EOF
     export NPM_REGISTRY=my-registry.example.com
     run /var/lib/tsuru/deploy
-    [ `cat ${CURRENT_DIR}/package-lock.json` == "my-registry.example.com/express" ]
+    [ "$(cat ${CURRENT_DIR}/package-lock.json)" == "my-registry.example.com/express" ]
 }
 
 @test "replaces the default yarnpkg.com urls with NPM_REGISTRY" {
