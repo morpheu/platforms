@@ -6,6 +6,7 @@ FROM platform-{PLATFORM}
 WORKDIR /tests
 ADD . /tests
 ADD common/* /tests/common/
+RUN true
 ADD https://github.com/sstephenson/bats/archive/master.tar.gz .
 RUN sudo mkdir ./bin && sudo tar -zxf master.tar.gz && sudo ./bats-master/install.sh .
 RUN echo "echo 'ran base deploy'" | sudo tee /var/lib/tsuru/base/deploy
