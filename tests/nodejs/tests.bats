@@ -332,9 +332,9 @@ EOF
     cat <<EOF >>${CURRENT_DIR}/package-lock.json
 https://registry.npmjs.org/express
 EOF
-    export NPM_REGISTRY=my-registry.example.com
+    export NPM_REGISTRY=https://registry.npmjs.eu
     run /var/lib/tsuru/deploy
-    [ "$(cat ${CURRENT_DIR}/package-lock.json)" == "my-registry.example.com/express" ]
+    [ "$(cat ${CURRENT_DIR}/package-lock.json)" == "https://registry.npmjs.eu/express" ]
 }
 
 @test "replaces the default yarnpkg.com urls with NPM_REGISTRY" {
