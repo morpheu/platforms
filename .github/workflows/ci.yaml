@@ -55,7 +55,7 @@ jobs:
             scratch,
             static,
           ]
-    if: (github.event_name != 'pull_request' and github.ref == 'refs/heads/github-actions') or startsWith(github.ref, 'refs/tags/')
+    if: (github.event_name != 'pull_request' && github.ref == 'refs/heads/github-actions') || startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
